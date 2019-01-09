@@ -1,0 +1,46 @@
+
+.formInput {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    border: 0;
+    padding: 0;
+}
+.doneButton {
+    max-width: 613px !important;
+    background: #d22f2f !important
+}
+.addDKP {
+    background: #5b7eb8 !important;
+    max-width: 573px !important;
+    margin-right: 10px !important
+}
+.addInfo{
+    max-width: 613px !important;
+    background: #5b7eb8 !important
+}
+
+.formIconCenter {
+    display: initial;
+    height: 30px;
+    width: 30px
+}
+.formDoneCenter {
+    display: none;
+    height: 30px;
+    width: 30px
+}
+.inputNumber {
+    max-width: 288px !important;
+    margin-right: 36px !important;
+    margin-bottom: 20px !important;
+    margin-top: 20px
+}
+.inputComment {
+    max-width: 288px !important;
+    margin-bottom: 20px !important;
+    margin-top: 20px !important
+}
+
