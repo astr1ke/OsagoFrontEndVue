@@ -1,10 +1,10 @@
 <template>
     <div>
         <h5 v-if="currentButtonGroupCount===0">Если Вам нужна ограниченая страховка, добавьте водителей!</h5>
-        <appAddDriverButton :style="visibleButtonsGroup.visibleButtons1"></appAddDriverButton>
-        <appAddDriverButton :style="visibleButtonsGroup.visibleButtons2"></appAddDriverButton>
-        <appAddDriverButton :style="visibleButtonsGroup.visibleButtons3"></appAddDriverButton>
-        <appAddDriverButton :style="visibleButtonsGroup.visibleButtons4"></appAddDriverButton>
+        <appAddDriverButton :style="visibleButtonsGroup.visibleButtons1" number="1"></appAddDriverButton>
+        <appAddDriverButton :style="visibleButtonsGroup.visibleButtons2" number="2"></appAddDriverButton>
+        <appAddDriverButton :style="visibleButtonsGroup.visibleButtons3" number="3"></appAddDriverButton>
+        <appAddDriverButton :style="visibleButtonsGroup.visibleButtons4" number="4"></appAddDriverButton>
 
         <button @click="addButtonGroup" :style="visibleButtonAddDriver" class="addDriverButton">Добавить водителя</button>
         <button class="doneButton" @click="this.$parent.nextPage">К последнему шагу</button>

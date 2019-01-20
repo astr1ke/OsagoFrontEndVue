@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import RightColumnComponent from './components/upload/rightColumn.vue'
 
+
 Vue.config.productionTip = false
 
 new Vue({

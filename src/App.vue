@@ -14,6 +14,7 @@
 
       <button class="doneButton" :style="{display: mainButton}" @click="nextPage">Следующий шаг</button><br>
     </form>
+
   </div>
 </template>
 
@@ -134,10 +135,9 @@ export default {
 
   methods: {
       submitMethod: function () {
-          alert('Отправляю форму');
 
           var data = new FormData(document.forms.inputFormName);
-          axios.post('http://osagoback.loc:8888/api/client/files/send', data, {
+          axios.post('http://127.0.0.1:80/api/client/files/send', data, {
               headers: {
                   'Content-Type': 'multipart/form-data'
               }

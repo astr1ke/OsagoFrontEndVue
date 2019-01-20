@@ -4,7 +4,6 @@
         <input @input="$emit('input2', $event.target.value)" class="inputComment" type="text" name="comment" placeholder="Так же можете оставить коментарий"/>
 
         <br>
-        <input type="text" name="form4more" id="more" hidden>
         <h5>Для вновь купленных автомобилей необходимы дополнительные документы!</h5>
 
         <button class="addInfo" @click="this.$parent.nextPage" type="submit">Доп. документы</button>
