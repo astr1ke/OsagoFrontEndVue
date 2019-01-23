@@ -4,7 +4,7 @@
     <appMainImage  :src = "mainImage" ></appMainImage>
 
     <form name=inputFormName class="tools osago" @submit.prevent="onSubmit" method="post" action="http://osagoback.loc:8888/api/client/files/send" enctype="multipart/form-data" id="my-form">
-      <!--@csrf-->
+      <input type="hidden" name="secret" :value="secretField">
 
       <appForm1 @change1="checker.form1.check1=$event" @change2="checker.form1.check2=$event" :style="{display: form1display}"></appForm1>
       <appForm2 @change1="checker.form2.check1=$event" @change2="checker.form2.check2=$event" :style="{display: form2display}"></appForm2>
@@ -21,7 +21,6 @@
 <script>
 import appTitle from './components/upload/app-title.vue'
 import appMainImage from './components/upload/app-main-image.vue'
-import appAddDriverButton from './components/upload/app-add-driver-button.vue'
 import appForm1 from './components/upload/app-form1.vue'
 import appForm2 from './components/upload/app-form2.vue'
 import appForm3 from './components/upload/app-form3.vue'
@@ -32,7 +31,7 @@ import axios from 'axios'
 export default {
   name: 'app',
   components: {
-      appAddDriverButton, appForm1, appForm2, appForm3, appForm4, appForm5, appMainImage, appTitle
+      appForm1, appForm2, appForm3, appForm4, appForm5, appMainImage, appTitle
   },
   data() {
       return {
@@ -130,6 +129,11 @@ export default {
       },
       form5display: function () {
           return this.pageSetting['page' + this.currentSetting]['form5display']
+      },
+      secretField: function () {
+          let newDate = new Date();
+          return newDate.getDate();
+
       }
   },
 
@@ -137,9 +141,9 @@ export default {
       submitMethod: function () {
 
           var data = new FormData(document.forms.inputFormName);
-          axios.post('http://127.0.0.1:80/api/client/files/send', data, {
+          axios.post('http://localhost/api/client/files/send', data, {
               headers: {
-                  'Content-Type': 'multipart/form-data'
+                  'Content-Type': 'multipart/form-data',
               }
           })
               .then(function (response) {
