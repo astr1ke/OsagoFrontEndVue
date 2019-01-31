@@ -52,4 +52,10 @@
         max-width: 613px !important;
         background: #d22f2f !important
     }
+    @media screen and (max-width:780px){
+        .doneButton,
+        .addDriverButton {
+            max-width: calc(100% - 15px) !important;
+        }
+    }
 </style>

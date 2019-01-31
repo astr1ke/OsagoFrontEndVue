@@ -1,6 +1,6 @@
 <template>
-  <div id = "app">
-    <appTitle :text="mainTitle"></appTitle>
+  <div>
+    <appTitle class="mainTitle" :text="mainTitle"></appTitle>
     <appMainImage  :src = "mainImage" ></appMainImage>
 
     <form name=inputFormName class="tools osago" @submit.prevent="onSubmit" method="post" action="http://osagoback.loc:8888/api/client/files/send" enctype="multipart/form-data" id="my-form">
@@ -19,17 +19,17 @@
 </template>
 
 <script>
-import appTitle from './components/upload/app-title.vue'
-import appMainImage from './components/upload/app-main-image.vue'
-import appForm1 from './components/upload/app-form1.vue'
-import appForm2 from './components/upload/app-form2.vue'
-import appForm3 from './components/upload/app-form3.vue'
-import appForm4 from './components/upload/app-form4.vue'
-import appForm5 from './components/upload/app-form5.vue'
+import appTitle from './upload/app-title.vue'
+import appMainImage from './upload/app-main-image.vue'
+import appForm1 from './upload/app-form1.vue'
+import appForm2 from './upload/app-form2.vue'
+import appForm3 from './upload/app-form3.vue'
+import appForm4 from './upload/app-form4.vue'
+import appForm5 from './upload/app-form5.vue'
 import axios from 'axios'
 
 export default {
-  name: 'app',
+  name: 'upload',
   components: {
       appForm1, appForm2, appForm3, appForm4, appForm5, appMainImage, appTitle
   },
@@ -188,5 +188,13 @@ export default {
   .doneButton {
     max-width: 613px !important;
     background: #d22f2f !important
+  }
+  @media screen and (max-width:780px){
+    .doneButton {
+      max-width: calc(100% - 15px) !important;
+    }
+    .mainTitle {
+      font-size: 28px;
+    }
   }
 </style>

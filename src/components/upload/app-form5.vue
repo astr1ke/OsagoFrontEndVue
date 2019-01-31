@@ -8,7 +8,7 @@
     <input type="hidden" name="hiddenField6">
     <input type="hidden" name="hiddenField7">
 
-        <button class="formButtonLeft" @click="clickLeftButton">ПТС 1 сторона</button>
+    <button class="formButtonLeft" @click="clickLeftButton">ПТС 1 сторона</button>
     <img class="iconLeft" :src="iconLeft" id="Form3UploadVisibleDoneLeft">
 
     <button class="formButtonRight" @click="clickRightButton">ПТС 2 сторона</button>
@@ -145,6 +145,13 @@
         background: #5b7eb8 !important;
         max-width: 573px !important;
         margin-right: 10px !important
+    }
+    @media screen and (max-width:780px){
+        .formButtonLeft,
+        .formButtonRight,
+        .addDKP {
+            max-width: calc(100% - 60px) !important;
+        }
     }
 
 </style>

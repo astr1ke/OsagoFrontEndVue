@@ -105,12 +105,14 @@
     .ButtonLeft {
         max-width: 258px !important;
         margin-right: 10px !important;
-        margin-bottom: 10px !important
+        margin-bottom: 10px !important;
+        margin-top: 10px !important;
     }
     .ButtonRight {
         max-width: 258px !important;
         margin-right: 10px !important;
-        margin-bottom: 10px !important
+        margin-bottom: 10px !important;
+        margin-top: 10px !important;
     }
     .formInput {
         position: absolute;
@@ -120,5 +122,12 @@
         height: 0;
         border: 0;
         padding: 0;
+    }
+    @media screen and (max-width:780px){
+        .ButtonLeft,
+        .ButtonRight {
+            max-width: calc(100% - 60px) !important;
+            margin-top: 0px !important;
+        }
     }
 </style>

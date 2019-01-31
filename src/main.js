@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from './App'
-import MainPage from './MainPage'
+import UploadPage from './components/UploadPage'
+import MainPage from './components/MainPage'
 import HeaderComponent from './components/layouts/header'
 
 
@@ -12,7 +12,7 @@ Vue.config.productionTip = false
 const routes = [
     { path: '/download', name: 'download', components: {
             comp1: HeaderComponent,
-            comp2: App }
+            comp2: UploadPage }
     },
     { path: '/', name: 'main', components: {
         comp1: HeaderComponent,

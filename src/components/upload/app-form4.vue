@@ -36,5 +36,17 @@
         margin-bottom: 20px !important;
         margin-top: 20px !important
     }
+    @media screen and (max-width:780px){
+        .doneButton,
+        .addInfo {
+            max-width: calc(100% - 15px) !important;
+        }
+        .inputNumber,
+        .inputComment {
+            border-radius: 5px !important;
+            max-width: calc(100% - 15px) !important;
+            margin-top: 2px !important;
+        }
+    }
 </style>
 

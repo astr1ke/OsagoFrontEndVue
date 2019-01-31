@@ -14,11 +14,11 @@
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Help Finding Information Online</h1>
+                                    <h1 class="animation animated-item-1">{{zagolovok}}</h1>
                                     <div class="animation animated-item-2">
-                                        Every new computer that’s brought home from the store has an operating system installed onto it.
+                                        {{zagolovokText}}
                                     </div>
-                                    <a class="btn-slide animation animated-item-3" href="#">Learn More</a>
+                                    <router-link class="btn-slide animation animated-item-3" :to="{name: 'download'}">Загрузить документы</router-link>
                                     <a class="btn-slide white animation animated-item-3" href="#">Get Started</a>
                                 </div>
                             </div>
@@ -63,9 +63,9 @@
 
     <section id="feature">
         <div class="container">
-            <div class="center fadeInDown" id="app">
-                <h2>Features</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            <div class="center fadeInDown">
+                <h2>{{about}}</h2>
+                <p class="lead">{{aboutText1}}<br>{{aboutText2}}</p>
             </div>
 
             <div class="row">
@@ -75,8 +75,8 @@
                             <div class="icon">
                                 <i class="fa fa-rocket"></i>
                             </div>
-                            <h2>Fast</h2>
-                            <p>Having a baby can be a nerve wracking experience for new</p>
+                            <h2>{{opt1}}</h2>
+                            <p>{{opt1Text}}</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -85,8 +85,8 @@
                             <div class="icon">
                                 <i class="fa fa-check"></i>
                             </div>
-                            <h2>Easy</h2>
-                            <p>If you are looking for a new way to promote your business that</p>
+                            <h2>{{opt2}}</h2>
+                            <p>{{opt2Text}}</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -95,8 +95,8 @@
                             <div class="icon">
                                 <i class="fa fa-bullhorn"></i>
                             </div>
-                            <h2>Cheap</h2>
-                            <p>Okay, you’ve decided you want to make money with Affiliate</p>
+                            <h2>{{opt3}}</h2>
+                            <p>{{opt3Text}}</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -105,8 +105,8 @@
                             <div class="icon">
                                 <i class="fa fa-arrows"></i>
                             </div>
-                            <h2>Editable</h2>
-                            <p>A Pocket PC is a handheld computer, which features many</p>
+                            <h2>{{opt4}}</h2>
+                            <p>{{opt4Text}}</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -122,8 +122,8 @@
     <section id="recent-works">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Recent Works</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>Последние новости в мире страхования</h2>
+                <p class="lead"></p>
             </div>
 
             <div class="row">
@@ -197,7 +197,7 @@
             <div class="clearfix text-center">
                 <br>
                 <br>
-                <a href="#" class="btn btn-primary">Show More</a>
+                <a href="#" class="btn btn-primary">Смотреть еще</a>
             </div>
         </div>
         <!--/.container-->
@@ -207,8 +207,8 @@
     <section id="services" class="service-item">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Our Service</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>Наши услуги</h2>
+                <p class="lead">Мы предоставляем полный спектр услуг по страхованию, <br> и всему что с этим связано:</p>
             </div>
 
             <div class="row">
@@ -219,8 +219,8 @@
                             <img class="img-responsive" src="images/services/ux.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">UI/UX Design</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <h3 class="media-heading">Осаго</h3>
+                            <p>Оформление как обычной так и электронной версии</p>
                         </div>
                     </div>
                 </div>
@@ -231,8 +231,8 @@
                             <img class="img-responsive" src="images/services/web.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Web Design</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <h3 class="media-heading">Техосмотр</h3>
+                            <p>Техосмотр пвего за 500 рублей!</p>
                         </div>
                     </div>
                 </div>
@@ -243,8 +243,8 @@
                             <img class="img-responsive" src="images/services/motion.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Motion Graphics</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <h3 class="media-heading">Каско</h3>
+                            <p>Доступны услуги по оформлению полиса каско</p>
                         </div>
                     </div>
                 </div>
@@ -255,8 +255,8 @@
                             <img class="img-responsive" src="images/services/mobile-ui.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Mobile UI/UX</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <h3 class="media-heading">Страхование имужества</h3>
+                            <p>У нас вы можете застраховать свой дом и квартиру</p>
                         </div>
                     </div>
                 </div>
@@ -267,8 +267,8 @@
                             <img class="img-responsive" src="images/services/web-app.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Web Applications</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <h3 class="media-heading">Страхование жизни</h3>
+                            <p>Для путешественников и просто граждан</p>
                         </div>
                     </div>
                 </div>
@@ -279,8 +279,8 @@
                             <img class="img-responsive" src="images/services/mobile-ui.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">SEO Marketing</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <h3 class="media-heading">Консультации</h3>
+                            <p>Связавшись с нами вы можете проконсультироваться по любым вопросам связаным со страхованием.</p>
                         </div>
                     </div>
                 </div>
@@ -297,15 +297,15 @@
             <div class="row">
                 <div class="col-sm-12 fadeInDown">
                     <div class="skill">
-                        <h2>Our Skills</h2>
-                        <p>All users on MySpace will know that there are millions of people out there. Every <br> day besides so many people joining this community.</p>
+                        <h2>Текущий уровень лояльности:</h2>
+                        <p>Большинство наших клиентов довольны нашей работой, обращаются к нам снова <br> и рекомендуют знакомым воспользоваться нашими услугами.</p>
                     </div>
                 </div>
                 <!--/.col-sm-6-->
 
                 <div class="col-sm-6">
                     <div class="progress-wrap">
-                        <h3>Graphic Design</h3>
+                        <h3>Скорость оформления</h3>
                         <div class="progress">
                             <div class="progress-bar  color1" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
                                 <span class="bar-width">85%</span>
@@ -315,7 +315,7 @@
                     </div>
 
                     <div class="progress-wrap">
-                        <h3>HTML</h3>
+                        <h3>Качество обслуживания</h3>
                         <div class="progress">
                             <div class="progress-bar color2" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
                                 <span class="bar-width">95%</span>
@@ -326,7 +326,7 @@
 
                 <div class="col-sm-6">
                     <div class="progress-wrap">
-                        <h3>CSS</h3>
+                        <h3>Оформление дополнительных услуг</h3>
                         <div class="progress">
                             <div class="progress-bar color3" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                 <span class="bar-width">80%</span>
@@ -335,7 +335,7 @@
                     </div>
 
                     <div class="progress-wrap">
-                        <h3>Wordpress</h3>
+                        <h3>Цена на услуги</h3>
                         <div class="progress">
                             <div class="progress-bar color4" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
                                 <span class="bar-width">90%</span>
@@ -351,77 +351,13 @@
     </section>
     <!--/#middle-->
 
-    <section id="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 fadeInDown">
-                    <div class="tab-wrap">
-                        <div class="media">
-                            <div class="parrent pull-left">
-                                <ul class="nav nav-tabs nav-stacked">
-                                    <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Responsive Web Design</a></li>
-                                    <li class="active"><a href="#tab2" data-toggle="tab" class="analistic-02">Premium Plugin Included</a></li>
-                                    <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Predefine Layout</a></li>
-                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Our Philosopy</a></li>
-                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">What We Do?</a></li>
-                                </ul>
-                            </div>
 
-                            <div class="parrent media-body">
-                                <div class="tab-content">
-                                    <div class="tab-pane fade" id="tab1">
-                                        <div class="media">
-                                            <div class="pull-left">
-                                                <img class="img-responsive" src="images/tab2.png">
-                                            </div>
-                                            <div class="media-body">
-                                                <h2>Adipisicing elit</h2>
-                                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="tab-pane fade active in text-right" id="tab2">
-                                        <div class="video-box">
-                                            <img src="images/tab-video-bg.png" alt="video">
-                                            <a class="video-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" rel="prettyPhoto"><i class="fa fa-play"></i></a>
-                                        </div>
-                                    </div>
-
-                                    <div class="tab-pane fade" id="tab3">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
-                                    </div>
-
-                                    <div class="tab-pane fade" id="tab4">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words</p>
-                                    </div>
-
-                                    <div class="tab-pane fade" id="tab5">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,</p>
-                                    </div>
-                                </div>
-                                <!--/.tab-content-->
-                            </div>
-                            <!--/.media-body-->
-                        </div>
-                        <!--/.media-->
-                    </div>
-                    <!--/.tab-wrap-->
-                </div>
-                <!--/.col-sm-6-->
-
-            </div>
-            <!--/.row-->
-        </div>
-        <!--/.container-->
-    </section>
-    <!--/#content-->
 
     <section id="testimonial">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Testimonials</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>Отзывы</h2>
+                <p class="lead">Здесь вы можете ознакомиться с оставлеными отзывами о работе нашей компании: </p>
             </div>
             <div class="testimonial-slider owl-carousel">
                 <div class="single-slide">
@@ -487,126 +423,31 @@
             </div>
         </div>
     </section>
-
-    <section id="partner">
-        <div class="container">
-            <div class="center fadeInDown">
-                <h2>Our Partners</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
-            </div>
-
-            <div class="partners">
-                <ul>
-                    <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/brand-1.png"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/brand-2.png"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/brand-3.png"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/brand-4.png"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/brand-5.png"></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!--/.container-->
-    </section>
-    <!--/#partner-->
-
-
-    <section id="bottom">
-        <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="row">
-                <div class="col-md-2">
-                    <a href="#" class="footer-logo">
-                        <img src="images/logo-black.png" alt="logo">
-                    </a>
-                </div>
-                <div class="col-md-10">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget">
-                                <h3>Company</h3>
-                                <ul>
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">We are hiring</a></li>
-                                    <li><a href="#">Meet the team</a></li>
-                                    <li><a href="#">Copyright</a></li>
-                                    <li><a href="#">Terms of use</a></li>
-                                    <li><a href="#">Privacy policy</a></li>
-                                    <li><a href="#">Contact us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--/.col-md-3-->
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget">
-                                <h3>Support</h3>
-                                <ul>
-                                    <li><a href="#">Faq</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Forum</a></li>
-                                    <li><a href="#">Documentation</a></li>
-                                    <li><a href="#">Refund policy</a></li>
-                                    <li><a href="#">Ticket system</a></li>
-                                    <li><a href="#">Billing system</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--/.col-md-3-->
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget">
-                                <h3>Developers</h3>
-                                <ul>
-                                    <li><a href="#">Web Development</a></li>
-                                    <li><a href="#">SEO Marketing</a></li>
-                                    <li><a href="#">Theme</a></li>
-                                    <li><a href="#">Development</a></li>
-                                    <li><a href="#">Email Marketing</a></li>
-                                    <li><a href="#">Plugin Development</a></li>
-                                    <li><a href="#">Article Writing</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--/.col-md-3-->
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="widget">
-                                <h3>Our Partners</h3>
-                                <ul>
-                                    <li><a href="#">Adipisicing Elit</a></li>
-                                    <li><a href="#">Eiusmod</a></li>
-                                    <li><a href="#">Tempor</a></li>
-                                    <li><a href="#">Veniam</a></li>
-                                    <li><a href="#">Exercitation</a></li>
-                                    <li><a href="#">Ullamco</a></li>
-                                    <li><a href="#">Laboris</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--/.col-md-3-->
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
     <!--/#bottom-->
 </div>
 </template>
 
 <script>
+    import options from '../options.json'
     export default {
-        name: "MainPage"
+        name: "MainPage",
+        data() {
+            return {
+                zagolovok: options.info.firstPage.zagolovok,
+                zagolovokText: options.info.firstPage.zagolovokText,
+                about: options.info.firstPage.about.about,
+                aboutText1: options.info.firstPage.about.aboutText1,
+                aboutText2: options.info.firstPage.about.aboutText2,
+                opt1: options.info.firstPage.about.opt1,
+                opt1Text: options.info.firstPage.about.opt1Text,
+                opt2: options.info.firstPage.about.opt2,
+                opt2Text: options.info.firstPage.about.opt2Text,
+                opt3: options.info.firstPage.about.opt3,
+                opt3Text: options.info.firstPage.about.opt3Text,
+                opt4: options.info.firstPage.about.opt4,
+                opt4Text: options.info.firstPage.about.opt4Text,
+            }
+        }
     }
 </script>
 

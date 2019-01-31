@@ -110,12 +110,14 @@
     .ButtonLeft {
         max-width: 258px !important;
         margin-right: 10px !important;
-        margin-bottom: 10px !important
+        margin-bottom: 10px !important;
+        margin-top: 10px !important;
     }
     .ButtonRight {
         max-width: 258px !important;
         margin-right: 10px !important;
-        margin-bottom: 10px !important
+        margin-bottom: 10px !important;
+        margin-top: 10px !important;
     }
     .formInput {
         position: absolute;
@@ -126,4 +128,17 @@
         border: 0;
         padding: 0;
     }
+    @media screen and (max-width:780px){
+        .ButtonLeft,
+        .ButtonRight {
+            max-width: calc(100% - 60px) !important;
+            margin-top: 0px !important;
+        }
+    }
+    .content_page form.tools button{border:none;padding:15px;font-size:20px;text-transform:uppercase;font-weight:600;background:#28ada3;color:#fff;margin:0px 30px 20px 0;cursor:pointer;border-radius:4px;width:100%;max-width:330px;}
+    .content_page form.tools button:hover{background:#F0664A;transition:0.3s;}
+    .content_page form.tools button[type=button]{display:none;margin:20px 0 0;}
+    .content_page form.tools input[type='text']{padding:10px !important;font-size:18px;width:100%;max-width:300px;margin:35px 30px 0px 0;}
+    .content_page form.tools input[type='text']:nth-of-type(2n){margin-right:0;}
+    .content_page form.tools h3{font-size:20px;margin:20px 0;}
 </style>

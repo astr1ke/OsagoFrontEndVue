@@ -10,10 +10,14 @@
 
 <style scoped>
     .mainPage {
-        align-items: center !important;
-        max-width: 620px !important;
-        max-height: 100% !important;
         border-radius: 20px !important;
-        margin-bottom: 25px !important
+    }
+    @media screen and (max-width:780px){
+        .mainPage {
+            max-width: calc(100% - 18px) !important;
+            align-items: center !important;
+            border-radius: 20px !important;
+            margin-bottom: 25px !important
+        }
     }
 </style>

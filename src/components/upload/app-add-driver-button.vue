@@ -6,10 +6,10 @@
         <input type="hidden" v-bind:name="'hiddenField'+this.number*10" >
         <input type="hidden" v-bind:name="'hiddenField'+this.number*10+1">
 
-        <button class="ButtonLeft" @click="clickLeftButton">Главная страница</button>
+        <button class="ButtonLeft" @click="clickLeftButton">А</button>
         <img class="iconLeft" :src="iconLeft" id="Form3UploadVisibleDoneLeft">
 
-        <button class="ButtonRight" @click="clickRightButton">Обратная сторона</button>
+        <button class="ButtonRight" @click="clickRightButton">Б</button>
         <img class="iconRight" :src="iconRight" id="Form3UploadVisibleDoneRight">
         <br/>
     </div>
@@ -103,12 +103,23 @@
     }
     .ButtonLeft {
         max-width: 258px !important;
+        height: 45px;
         margin-right: 10px !important;
         margin-bottom: 10px !important
     }
     .ButtonRight {
         max-width: 258px !important;
+        height: 45px;
         margin-right: 10px !important;
         margin-bottom: 10px !important
+    }
+    .formInput {
+        display: none;
+    }
+    @media screen and (max-width:780px){
+        .ButtonLeft,
+        .ButtonRight {
+            max-width: calc(100% / 2 - 60px) !important;
+        }
     }
 </style>
