@@ -121,7 +121,7 @@ body>section {
 
 .center {
     text-align: center;
-    padding-bottom: 55px;
+    padding-bottom: 25px;
 }
 
 .scaleIn {
@@ -396,7 +396,7 @@ input.search-form:hover {
 
 #main-slider .carousel .btn-slide {
     padding: 0 30px;
-    line-height: 42px;
+    line-height: 52px;
     background: #EC5538;
     color: #fff;
     border-radius: 4px;
@@ -409,7 +409,7 @@ input.search-form:hover {
 
 #main-slider .carousel .btn-slide.white {
     border: 1px solid rgba(255, 255, 255, 0.44);
-    background: rgba(255, 255, 255, 0.26);
+    background: rgba(0, 169, 53, 0.6);
     color: #fff;
 }
 
@@ -640,7 +640,7 @@ input.search-form:hover {
 }
 
 .services-wrap {
-    padding: 40px 30px;
+    padding: 20px 10px;
     background: #fff;
     border-radius: 4px;
     margin: 0 0 40px;
@@ -693,17 +693,17 @@ input.search-form:hover {
 }
 
 #middle h2 {
-    font-size: 48px;
+    font-size: 32px;
     color: #ffffff;
 }
 
 #middle .skill {
-    margin-bottom: 60px;
+    margin-bottom: 0px;
 }
 
 .progress-wrap {
     position: relative;
-    padding: 10px 35px;
+    padding: 3px 35px;
 }
 
 .progress-wrap h3 {

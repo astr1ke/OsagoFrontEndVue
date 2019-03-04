@@ -11,8 +11,9 @@
 <style scoped>
     .mainPage {
         border-radius: 20px !important;
+        margin-bottom: 15px;
     }
-    @media screen and (max-width:780px){
+    @media screen and (max-height:600px){
         .mainPage {
             max-width: calc(100% - 18px) !important;
             align-items: center !important;

@@ -15,6 +15,20 @@
       <button class="doneButton" :style="{display: mainButton}" @click="nextPage">Следующий шаг</button><br>
     </form>
 
+
+    <div class="background" v-if="loading">
+      <div class="loader loader-left"></div>
+      <div class="loader loader-right"></div>
+        <defs>
+          <filter id="goo">
+            <fegaussianblur in="SourceGraphic" stddeviation="15" result="blur"></fegaussianblur>
+            <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -7" result="goo"></fecolormatrix>
+            <feblend in="SourceGraphic" in2="goo"></feblend>
+          </filter>
+        </defs>
+    </div>
+    <div id="mask" v-if="loading"></div>
+
   </div>
 </template>
 
@@ -27,6 +41,7 @@ import appForm3 from './upload/app-form3.vue'
 import appForm4 from './upload/app-form4.vue'
 import appForm5 from './upload/app-form5.vue'
 import axios from 'axios'
+import config from '../config'
 
 export default {
   name: 'upload',
@@ -35,6 +50,8 @@ export default {
   },
   data() {
       return {
+          loading: false,
+          apiUrl: config.apiUrl,
           checker: {
               form1: {
                   check1: false,
@@ -63,7 +80,7 @@ export default {
                   form5display: 'none'
               },
               page2: {
-                  mainTitle: 'Загрузите Свидетельство о регистрации ТС:',
+                  mainTitle: 'Свидетельство о регистрации ТС:',
                   mainImage: '/images/sts.jpg',
                   mainButton: 'initial',
                   form1display: 'none',
@@ -73,7 +90,7 @@ export default {
                   form5display: 'none'
               },
               page3: {
-                  mainTitle: 'Загрузите Водительские удостоверения:',
+                  mainTitle: 'Водительские удостоверения:',
                   mainImage: '/images/prava.jpg',
                   mainButton: 'none',
                   form1display: 'none',
@@ -93,7 +110,7 @@ export default {
                   form5display: 'none'
               },
               page5: {
-                  mainTitle: 'Загрузите Паспорт ТС (ПТС) и договор купли-продажи:',
+                  mainTitle: 'Паспорт ТС (ПТС) и договор купли-продажи:',
                   mainImage: '/images/pts.jpg',
                   mainButton: 'none',
                   form1display: 'none',
@@ -139,35 +156,40 @@ export default {
 
   methods: {
       submitMethod: function () {
+          this.loading = true
+          var data = new FormData(document.forms.inputFormName)
 
-          var data = new FormData(document.forms.inputFormName);
-          axios.post('http://localhost/api/client/files/send', data, {
-              headers: {
-                  'Content-Type': 'multipart/form-data',
-              }
-          })
+          axios
+              .post(this.apiUrl + '/api/client/files/send', data, {
+                  headers: {
+                      'Content-Type': 'multipart/form-data',
+                  }
+              })
               .then(function (response) {
-                  console.log(response);
+                  console.log(response)
                   if (response.status === 200) {
-                      alert('Отправлено отлично!!!')
+                      alert('Документы отправленны!')
+                    document.location.href = "/";
                   }
               })
               .catch(function (error) {
-                  console.log(error);
-              });
-
+                  console.log(error)
+              })
+              .finally(() => (this.loading = false))
       },
+
       toFourStep: function() {
           this.currentSetting = 4
       },
+
       nextPage: function () {
-          var currentForm = 'form' + this.currentSetting;
+          var currentForm = 'form' + this.currentSetting
           var m = this.checker[currentForm];
           var result = true;
 
           for (var i in m ){
               if (m[i] === false) {
-                  alert('Заполните все документы');
+                  alert('Заполните все документы')
                   return false
               }else{
                   result = true;
@@ -180,6 +202,7 @@ export default {
               }
           }
       }
+
   }
 }
 </script>
@@ -197,4 +220,119 @@ export default {
       font-size: 28px;
     }
   }
+
+  .background {
+    -webkit-filter: url("#goo");
+    filter: url("#goo");
+
+    width:300px;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    text-align:center;
+    margin-left: -150px;
+    margin-top: -150px;
+    z-index:2;
+    overflow: auto;
+  }
+  .loader {
+    -webkit-filter: url("#goo");
+    filter: url("#goo");
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: calc(50% - 4rem / 2);
+    left: calc(50% - 4rem / 2);
+    background: #2E86FF;
+    border-radius: 2rem;
+  }
+  .loader-left {
+    -webkit-animation: rotateLeft 2s ease-in-out infinite, color 2s ease-in-out infinite;
+    animation: rotateLeft 2s ease-in-out infinite, color 2s ease-in-out infinite;
+  }
+  .loader-right {
+    -webkit-animation: rotateRight 2s ease-in-out infinite, color 2s ease-in-out infinite;
+    animation: rotateRight 2s ease-in-out infinite, color 2s ease-in-out infinite;
+  }
+  @-webkit-keyframes rotateLeft {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+      -webkit-transform-origin: -50% -50%;
+      transform-origin: -50% -50%;
+    }
+  }
+  @keyframes rotateLeft {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+      -webkit-transform-origin: -50% -50%;
+      transform-origin: -50% -50%;
+    }
+  }
+  @-webkit-keyframes rotateRight {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+      -webkit-transform-origin: 150% 150%;
+      transform-origin: 150% 150%;
+    }
+  }
+  @keyframes rotateRight {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+      -webkit-transform-origin: 150% 150%;
+      transform-origin: 150% 150%;
+    }
+  }
+  @-webkit-keyframes color {
+    0% {
+      background: #2E86FF;
+    }
+    50% {
+      background: #FC3164;
+    }
+    100% {
+      background: #2E86FF;
+    }
+  }
+  @keyframes color {
+    0% {
+      background: #2E86FF;
+    }
+    50% {
+      background: #FC3164;
+    }
+    100% {
+      background: #2E86FF;
+    }
+  }
+
+  #mask {
+    background-color:rgba(0,0,0,.3);
+    height:100%;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+  }
 </style>
+
