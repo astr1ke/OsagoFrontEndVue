@@ -10,7 +10,7 @@
             </ol>
             <div class="carousel-inner">
 
-                <div class="item active" style="background-image: url(images/slider/bg1.jpg)">
+                <div class="item active" style="background-image: url(images/slider/mers.jpg)">
                     <div class="container margin-top">
                         <div class="row">
                             <div class="col-md-7">
@@ -28,7 +28,24 @@
                     </div>
                 </div>
 
-                <div class="item" style="background-image: url(images/slider/bg2.jpg)">
+                <div class="item" style="background-image: url(images/slider/bmw2.jpg)">
+                    <div class="container margin-top">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1 h1-font-size">{{zagolovok2}}</h1>
+                                    <div class="animation animated-item-2">
+                                        {{zagolovokText2}}
+                                    </div>
+                                    <router-link class="btn-slide animation animated-item-3 size-mobile margin-top1" :to="{name: 'download'}">Загрузить документы</router-link>
+                                    <a class="btn-slide white animation animated-item-3 size-mobile margin-top2" href="tel:+79186321007"><span class="glyphicon glyphicon-earphone"></span>  Позвонить нам</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(images/slider/audi.jpg)">
                     <div class="container margin-top">
                         <div class="row">
                             <div class="col-md-7">
@@ -59,7 +76,7 @@
         <div class="container">
             <div class="center fadeInDown">
                 <h2>Наши услуги</h2>
-                <p class="lead">Мы предоставляем полный спектр услуг по страхованию, <br> и всему что с этим связано:</p>
+                <p class="lead">Мы предоставляем полный спектр услуг по страхованию, <br> и подготовки документов:</p>
             </div>
             <div class="row">
 
@@ -70,7 +87,7 @@
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Осаго</h3>
-                            <p>Оформление как обычной так и электронной версии</p>
+                            <p>Оформление как обычной так и электронной версии.</p>
                         </div>
                     </div>
                 </div>
@@ -94,7 +111,7 @@
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Каско</h3>
-                            <p>Доступны услуги по оформлению полиса каско</p>
+                            <p>Доступны услуги по оформлению полиса каско.</p>
                         </div>
                     </div>
                 </div>
@@ -105,8 +122,8 @@
                             <img class="img-responsive" src="images/services/mobile-ui.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Страхование имущества</h3>
-                            <p>У нас вы можете застраховать свой дом и квартиру</p>
+                            <h3 class="media-heading">Помощь при ДТП</h3>
+                            <p>Оформлние европротокола и подготовка полного пакета документов для СК.</p>
                         </div>
                     </div>
                 </div>
@@ -117,8 +134,8 @@
                             <img class="img-responsive" src="images/services/web-app.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Страхование жизни</h3>
-                            <p>Для путешественников и граждан Российской Федерации</p>
+                            <h3 class="media-heading">Подгодка документов в ГАИ</h3>
+                            <p>Пакет документов для постановки на учет и смену собственника ТС.</p>
                         </div>
                     </div>
                 </div>
@@ -197,7 +214,7 @@
 
                 <div class="col-sm-6">
                     <div class="progress-wrap">
-                        <h3>Оформление дополнительных услуг</h3>
+                        <h3>Спектр услуг</h3>
                         <div class="progress">
                             <div class="progress-bar color3" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                 <span class="bar-width">80%</span>
@@ -208,8 +225,8 @@
                     <div class="progress-wrap">
                         <h3>Цена на услуги</h3>
                         <div class="progress">
-                            <div class="progress-bar color4" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 97%">
-                                <span class="bar-width">97%</span>
+                            <div class="progress-bar color4" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                <span class="bar-width">15%</span>
                             </div>
                         </div>
                     </div>
@@ -227,14 +244,14 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <p class="lead"><span class="glyphicon glyphicon-home"></span> Мы нахожимся по адресу:</p>
-                    <p class="lead" style="margin-bottom: 10px">с.Успенское ул.Крупской 35, </p>
-                    <p class="lead">угловой вход со стороны аптеки </p>
+                    <p class="lead"><span class="glyphicon glyphicon-home"></span> Мы находимся по адресу:</p>
+                    <p class="lead" style="margin-bottom: 10px">с. Успенское ул.Крупской 36, </p>
+                    <p class="lead">напротив ЦРБ </p>
                 </div>
                 <div class="col-md-6">
                     <p class="lead"><span class="glyphicon glyphicon-phone-alt"></span> Телефоны для связи:</p>
                     <p class="lead" style="margin-bottom: 10px"><i class="fa fa-phone-square"></i>  Основной: <a class="phone-link" href="tel:+79186321007">+7 (918) 63 21 007</a></p>
-                    <p class="lead"><i class="fa fa-phone-square"></i>  Доп. номер: <a class="phone-link" href="tel:+79286321007">+7 (928) 63 21 007</a></p>
+                    <p class="lead"><i class="fa fa-phone-square"></i>  Доп. номер: <a class="phone-link" href="tel:+79186321007">+7 (918) 43 55 402</a></p>
                 </div>
             </div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.5781569572514!2d41.37519644791012!3d44.830157929271685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f9cf56ee8c86c1%3A0xa525a357f432d94f!2z0J7QodCQ0JPQniDQkNCy0YLQvtGB0YLRgNCw0YXQvtCy0LDQvdC40LU!5e0!3m2!1sru!2sru!4v1549455194264"  width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
