@@ -4,9 +4,8 @@
         <input @input="$emit('input2', $event.target.value)" class="inputComment" type="text" name="comment" placeholder="Так же можете оставить коментарий"/>
 
         <br>
-        <h5>Для вновь купленных автомобилей необходимы дополнительные документы!</h5>
+        <h5>Все готово! Теперь мы можем отправить документы!</h5>
 
-        <button class="addInfo" @click="this.$parent.nextPage" type="submit">Доп. документы</button>
         <button @click="$emit('submit-button')" class="doneButton" type="submit">Отправить заявку!</button>
     </div>
 </template>

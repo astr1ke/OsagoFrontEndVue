@@ -17,7 +17,7 @@
     <button class="addDKP" @click="clickCenterButton">Договор Купли Продажи</button>
     <img class="iconCenter" :src="iconCenter" id="Form3UploadVisibleDoneCenter">
 
-    <button @click="$emit('to4step')" class="doneButton" type="submit">Сохранить и вернуться</button>
+    <!--<button @click="$emit('to4step')" class="doneButton" type="submit">Сохранить и вернуться</button>-->
 
     </div>
 </template>

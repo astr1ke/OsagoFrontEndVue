@@ -315,7 +315,7 @@ input.search-form:hover {
 .navbar-inverse .navbar-nav>.open>a,
 .navbar-inverse .navbar-nav>.open>a:hover,
 .navbar-inverse .navbar-nav>.open>a:focus {
-    background-color: #EC5538;
+    background-color: #858585;
     color: #fff;
 }
 
@@ -397,14 +397,14 @@ input.search-form:hover {
 #main-slider .carousel .btn-slide {
     padding: 0 30px;
     line-height: 52px;
-    background: #EC5538;
+    background: #ba0017;
     color: #fff;
     border-radius: 4px;
     margin-top: 40px;
     display: inline-block;
     font-size: 14px;
     margin-right: 10px;
-    border: 1px solid #EC5538;
+    border: 1px solid #ba0017;
 }
 
 #main-slider .carousel .btn-slide.white {
@@ -459,7 +459,7 @@ input.search-form:hover {
 #main-slider .next {
     position: absolute;
     top: 50%;
-    background-color: #EC5538;
+    background-color: rgba(0, 0, 0, 0.52);
     color: #fff;
     display: inline-block;
     margin-top: -25px;
