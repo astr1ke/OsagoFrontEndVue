@@ -6,10 +6,10 @@
         <input type="hidden" v-bind:name="'hiddenField'+this.number*10" >
         <input type="hidden" v-bind:name="'hiddenField'+this.number*10+1">
 
-        <button class="ButtonLeft" @click="clickLeftButton">А</button>
+        <button class="ButtonLeft" @click="clickLeftButton">Сторона   А</button>
         <img class="iconLeft" :src="iconLeft" id="Form3UploadVisibleDoneLeft">
 
-        <button class="ButtonRight" @click="clickRightButton">Б</button>
+        <button class="ButtonRight" @click="clickRightButton">Сторона   Б</button>
         <img class="iconRight" :src="iconRight" id="Form3UploadVisibleDoneRight">
         <br/>
     </div>

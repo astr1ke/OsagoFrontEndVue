@@ -6,11 +6,12 @@
     <form name=inputFormName class="tools osago" @submit.prevent="onSubmit" method="post" action="http://osagoback.loc:8888/api/client/files/send" enctype="multipart/form-data" id="my-form">
       <input type="hidden" name="secret" :value="secretField">
 
+      <checkerPage :style="{display: checkerPage}" @checkerDriver="needDriver = $event" @checkerDocument="needDocument = $event"></checkerPage>
       <appForm1 @change1="checker.form1.check1=$event" @change2="checker.form1.check2=$event" :style="{display: form1display}"></appForm1>
       <appForm2 @change1="checker.form2.check1=$event" @change2="checker.form2.check2=$event" :style="{display: form2display}"></appForm2>
       <appForm3 :style="{display: form3display}"></appForm3>
       <appForm4 @submit-button="submitMethod" @input1="phone=$event" @input2="comment=$event" :style="{display: form4display}"></appForm4>
-      <appForm5 @to4step="toFourStep" @change1="checker.form5.check1=$event" @change2="checker.form5.check2=$event" @change3="checker.form5.check3=$event" :style="{display: form5display}"></appForm5>
+      <appForm5 @to4step="toFourStep" @change1="checker.form4.check1=$event" @change2="checker.form4.check2=$event" @change3="checker.form4.check3=$event" :style="{display: form5display}"></appForm5>
 
       <button class="doneButton" :style="{display: mainButton}" @click="nextPage">Следующий шаг</button><br>
     </form>
@@ -35,6 +36,7 @@
 <script>
 import appTitle from './upload/app-title.vue'
 import appMainImage from './upload/app-main-image.vue'
+import checkerPage from './upload/checkerPage'
 import appForm1 from './upload/app-form1.vue'
 import appForm2 from './upload/app-form2.vue'
 import appForm3 from './upload/app-form3.vue'
@@ -46,10 +48,12 @@ import config from '../config'
 export default {
   name: 'upload',
   components: {
-      appForm1, appForm2, appForm3, appForm4, appForm5, appMainImage, appTitle
+      checkerPage, appForm1, appForm2, appForm3, appForm4, appForm5, appMainImage, appTitle
   },
   data() {
       return {
+          needDriver: 'yes',
+          needDocument: 'yes',
           loading: false,
           apiUrl: config.apiUrl,
           checker: {
@@ -61,18 +65,30 @@ export default {
                   check1: false,
                   check2: false
               },
-              form5: {
+              form4: {
                   check1: false,
                   check2: false,
                   check3: false
               }
           },
-          currentSetting: 1,
+          currentSetting: 0,
           pageSetting: {
+              page0: {
+                mainTitle: 'Начальная страница загрузки',
+                mainImage: '/images/checkerImage.jpg',
+                mainButton: 'initial',
+                checker: 'initial',
+                form1display: 'none',
+                form2display: 'none',
+                form3display: 'none',
+                form4display: 'none',
+                form5display: 'none'
+              },
               page1: {
                   mainTitle: 'Загрузите фото паспорта собственника:',
                   mainImage: '/images/passport.jpg',
                   mainButton: 'initial',
+                  checker: 'none',
                   form1display: 'initial',
                   form2display: 'none',
                   form3display: 'none',
@@ -83,6 +99,7 @@ export default {
                   mainTitle: 'Свидетельство о регистрации ТС:',
                   mainImage: '/images/sts.jpg',
                   mainButton: 'initial',
+                  checker: 'none',
                   form1display: 'none',
                   form2display: 'initial',
                   form3display: 'none',
@@ -93,6 +110,7 @@ export default {
                   mainTitle: 'Водительские удостоверения:',
                   mainImage: '/images/prava.jpg',
                   mainButton: 'none',
+                  checker: 'none',
                   form1display: 'none',
                   form2display: 'none',
                   form3display: 'initial',
@@ -100,24 +118,26 @@ export default {
                   form5display: 'none'
               },
               page4: {
+                mainTitle: 'Паспорт ТС (ПТС) и договор купли-продажи:',
+                mainImage: '/images/pts.jpg',
+                mainButton: 'initial',
+                checker: 'none',
+                form1display: 'none',
+                form2display: 'none',
+                form3display: 'none',
+                form4display: 'none',
+                form5display: 'initial'
+              },
+              page5: {
                   mainTitle: 'Все документы загружены!!!',
                   mainImage: '/images/osago.jpg',
                   mainButton: 'none',
+                  checker: 'none',
                   form1display: 'none',
                   form2display: 'none',
                   form3display: 'none',
                   form4display: 'initial',
                   form5display: 'none'
-              },
-              page5: {
-                  mainTitle: 'Паспорт ТС (ПТС) и договор купли-продажи:',
-                  mainImage: '/images/pts.jpg',
-                  mainButton: 'none',
-                  form1display: 'none',
-                  form2display: 'none',
-                  form3display: 'none',
-                  form4display: 'none',
-                  form5display: 'initial'
               }
           }
       }
@@ -131,6 +151,9 @@ export default {
       },
       mainButton: function () {
           return this.pageSetting['page' + this.currentSetting]['mainButton']
+      },
+      checkerPage: function () {
+        return this.pageSetting['page' + this.currentSetting]['checker']
       },
       form1display: function () {
           return this.pageSetting['page' + this.currentSetting]['form1display']
@@ -198,7 +221,15 @@ export default {
 
           if (result === true) {
               if (this.currentSetting < 5) {
+
                   this.currentSetting++
+                  if  (this.currentSetting === 3 && this.needDriver === 'no') {
+                      this.currentSetting ++
+                  }
+                  if (this.currentSetting === 4 && this.needDocument === 'no') {
+                      this.currentSetting ++
+                  }
+
               }
           }
       }
