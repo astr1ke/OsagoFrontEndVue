@@ -5,6 +5,7 @@ import UploadPage from './components/UploadPage'
 import MainPage from './components/MainPage'
 import HeaderComponent from './components/layouts/header'
 import NewsComponent from './components/News'
+import CalcOsago from './components/CalcOsago'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
@@ -27,6 +28,7 @@ const routes = [
         }
     },
     {   path: '/news/:idNews',
+        name: 'news',
         components:{
             comp1: HeaderComponent,
             comp2: NewsComponent
@@ -34,6 +36,13 @@ const routes = [
         props: {
             comp1: true,
             comp2: true
+        }
+    },
+    {   path: '/calc-osago',
+        name: 'calc-osago',
+        components: {
+            comp1: HeaderComponent,
+            comp2: CalcOsago
         }
     }
 ]

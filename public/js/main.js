@@ -86,3 +86,9 @@ jQuery(function ($) {
         social_tools: false
     });
 });
+
+window.addEventListener('message', function(event) {
+    if(height = event.data['height']) {
+        document.getElementById('calc-iframe').style.height =  height + 'px'
+    }
+})

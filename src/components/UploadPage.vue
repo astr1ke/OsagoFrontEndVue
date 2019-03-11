@@ -3,6 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
+                    <RightMenu style="margin-left: 0"></RightMenu>
                     <rightColumn></rightColumn>
                 </div>
 
@@ -19,9 +20,11 @@
 <script>
     import upload from './Upload'
     import rightColumn from './upload/rightColumn'
+    import RightMenu from './layouts/RightMenu'
+
     export default {
         name: "UploadPage",
-        components: {upload, rightColumn}
+        components: {upload, rightColumn, RightMenu}
     }
 </script>
 

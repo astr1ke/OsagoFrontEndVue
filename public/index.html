@@ -17,6 +17,7 @@
     <link href="/css/icomoon.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
+    <link href="/css/sidebar.css" rel="stylesheet">
 
     <!-- spinner-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -29,30 +30,35 @@
 </head>
 <!--/head-->
 
-<body class="homepage">
-    <div id="router">
-        <router-view></router-view>
-        <router-view name="comp1"></router-view>
-        <router-view name="comp2"></router-view>
-    </div>
-
-    <footer id="footer" class="midnight-blue footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2019 <a target="_blank" href="http://дмитрийсафонов.рус/" title="Создание и продвижение сайтов">Дмитрий Сафонов</a>. Все права защищены.
+    <body class="homepage">
+        <div class="wrapper">
+            <div class="content">
+                <div id="router">
+                    <router-view></router-view>
+                    <router-view name="comp1"></router-view>
+                    <router-view name="comp2"></router-view>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!--/#footer-->
 
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.prettyPhoto.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/jquery.isotope.min.js"></script>
-    <script src="/js/main.js"></script>
-</body>
+            <footer id="footer" class="midnight-blue footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            &copy; Osagoff 2019.   By: <a style="color: #9c9c9c" target="_blank" href="http://дмитрийсафонов.рус/" title="Создание и продвижение сайтов">Дмитрий Сафонов</a>.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--/#footer-->
+
+            <script src="/js/jquery.js"></script>
+            <script src="/js/bootstrap.min.js"></script>
+            <script src="/js/jquery.prettyPhoto.js"></script>
+            <script src="/js/owl.carousel.min.js"></script>
+            <script src="/js/jquery.isotope.min.js"></script>
+            <script src="/js/main.js"></script>
+        </div>
+    </body>
+
 
 </html>

@@ -6,7 +6,6 @@
             <ol class="carousel-indicators">
                 <li data-target="#main-slider" data-slide-to="0" class="active"></li>
                 <li data-target="#main-slider" data-slide-to="1"></li>
-                <li data-target="#main-slider" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
 
@@ -17,9 +16,9 @@
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1 h1-font-size">{{zagolovok}}</h1>
                                     <div class="animation animated-item-2">
-                                        {{zagolovokText}}
+                                        <span v-html = "zagolovokText"></span>
                                     </div>
-                                    <router-link class="btn-slide animation animated-item-3 size-mobile margin-top1" :to="{name: 'download'}">Загрузить документы</router-link>
+                                    <router-link class="btn-slide animation animated-item-3 size-mobile margin-top1 button" :to="{name: 'download'}">Заказать Осаго</router-link>
                                     <a class="btn-slide white animation animated-item-3 size-mobile margin-top2" href="tel:+79186321007"><span class="glyphicon glyphicon-earphone"></span>  Позвонить нам</a>
                                 </div>
                             </div>
@@ -37,24 +36,7 @@
                                     <div class="animation animated-item-2">
                                         {{zagolovokText2}}
                                     </div>
-                                    <router-link class="btn-slide animation animated-item-3 size-mobile margin-top1" :to="{name: 'download'}">Загрузить документы</router-link>
-                                    <a class="btn-slide white animation animated-item-3 size-mobile margin-top2" href="tel:+79186321007"><span class="glyphicon glyphicon-earphone"></span>  Позвонить нам</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item" style="background-image: url(images/slider/audi.jpg)">
-                    <div class="container margin-top">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="carousel-content">
-                                    <h1 class="animation animated-item-1 h1-font-size">{{zagolovok2}}</h1>
-                                    <div class="animation animated-item-2">
-                                        {{zagolovokText2}}
-                                    </div>
-                                    <router-link class="btn-slide animation animated-item-3 size-mobile margin-top1" :to="{name: 'download'}">Загрузить документы</router-link>
+                                    <router-link class="btn-slide animation animated-item-3 size-mobile margin-top1 button" :to="{name: 'download'}">Заказать Осаго</router-link>
                                     <a class="btn-slide white animation animated-item-3 size-mobile margin-top2" href="tel:+79186321007"><span class="glyphicon glyphicon-earphone"></span>  Позвонить нам</a>
                                 </div>
                             </div>
@@ -75,8 +57,8 @@
     <section id="services" class="service-item" style="margin-top: 50px">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Наши услуги</h2>
-                <p class="lead">Мы предоставляем полный спектр услуг по страхованию, <br> и подготовки документов:</p>
+                <h2>Услуги нашей компании</h2>
+                <p class="lead">предоставляем полный спектр услуг по страхованию, <br> сбору и подготовке документов:</p>
             </div>
             <div class="row">
 
@@ -95,7 +77,7 @@
                 <div class="col-sm-6 col-md-4 marg">
                     <div class="media services-wrap fadeInDown">
                         <div class="pull-left">
-                            <img class="img-responsive" src="images/services/web.svg">
+                            <img class="img-responsive" src="images/services/seo.svg">
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Техосмотр</h3>
@@ -168,10 +150,16 @@
             <div class="row">
 
                 <div v-for="article in articles" :key="article.id">
-                    <div class="col-xs-12 col-sm-6 col-md-4 single-work news">
+                    <div class="col-xs-12 col-sm-6 col-md-4 single-work">
                         <div class="recent-work-wrap">
-                            <router-link :to="{path: 'news/' + article.id} "> <img class="img-responsive news-img" :src="article.file" alt="" style="height: 320px; width: 400px; object-fit: cover"> </router-link>
-                            <span>{{ article.title.substr(0, 50) + '...' }}</span>
+                            <div style="height: 280px; width: 400px">
+                                <router-link :to="{path: 'news/' + article.id} ">
+                                    <div style="height: 260px; width: 380px; margin: auto" class="news">
+                                        <img class="img-responsive news-img news-main-img" :src="article.file" alt="">
+                                        <span>{{ article.title.substr(0, 50) + '...' }}</span>
+                                    </div>
+                                </router-link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -186,7 +174,7 @@
             <div class="row">
                 <div class="col-sm-12 fadeInDown">
                     <div class="skill">
-                        <h2>Текущий уровень лояльности:</h2>
+                        <h2 style="margin-bottom: 15px">Текущий уровень лояльности:</h2>
                         <p>Большинство наших клиентов довольны нашей работой, обращаются к нам снова <br> и рекомендуют знакомым воспользоваться нашими услугами.</p>
                     </div>
                 </div>
@@ -202,7 +190,7 @@
                         </div>
                     </div>
 
-                    <div class="progress-wrap">
+                    <div class="progress-wrap" style="padding-bottom: 50px">
                         <h3>Качество обслуживания</h3>
                         <div class="progress">
                             <div class="progress-bar color2" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
@@ -240,20 +228,35 @@
         <div class="container" style="margin-bottom: 50px">
             <div class="center">
                 <a name="contacts"></a>
-                <h2 style="margin-top: 15px">Контакты</h2>
+                <h2 style="margin-top: 65px">Контакты</h2>
             </div>
+
             <div class="row">
-                <div class="col-md-6">
-                    <p class="lead"><span class="glyphicon glyphicon-home"></span> Мы находимся по адресу:</p>
-                    <p class="lead" style="margin-bottom: 10px">с. Успенское ул.Крупской 36, </p>
-                    <p class="lead">напротив ЦРБ </p>
+                <div class="col-md-4">
+                    <div class="cntr">
+                        <p class="lead"><span class="glyphicon glyphicon-home"></span> Мы находимся по адресу:</p>
+                        <p class="lead" style="margin-bottom: 10px">с. Успенское ул.Крупской 36, </p>
+                        <p class="lead">напротив ЦРБ </p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <p class="lead"><span class="glyphicon glyphicon-phone-alt"></span> Телефоны для связи:</p>
-                    <p class="lead" style="margin-bottom: 10px"><i class="fa fa-phone-square"></i>  Основной: <a class="phone-link" href="tel:+79186321007">+7 (918) 63 21 007</a></p>
-                    <p class="lead"><i class="fa fa-phone-square"></i>  Доп. номер: <a class="phone-link" href="tel:+79186321007">+7 (918) 43 55 402</a></p>
+
+                <div class="col-md-4">
+                    <div class="cntr">
+                        <p class="lead"><span class="glyphicon glyphicon-phone-alt"></span> Телефоны для связи:</p>
+                        <p class="lead" style="margin-bottom: 10px"><i class="fa fa-phone-square"></i>  Основной: <a class="phone-link" style="color: #00a935" href="tel:+79186321007">+7 (918) 63 21 007</a></p>
+                        <p class="lead"><i class="fa fa-phone-square"></i>  Доп. номер: <a class="phone-link" style="color: #00a935" href="tel:+79186321007">+7 (918) 43 55 402</a></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="cntr">
+                        <p class="lead"><span class="glyphicon glyphicon-cloud"></span> Другие контакты:</p>
+                        <p class="lead" style="margin-bottom: 10px"><i class="glyphicon glyphicon-envelope"></i>  E-mail: <a class="phone-link" style="color: #00a935" href="mailto:9186321007@mail.ru">9186321007@mail.ru</a></p>
+                        <p class="lead" style="margin-bottom: 40px"><i class="glyphicon glyphicon-phone"></i>  WatsUp: <a class="phone-link" style="color: #00a935">+7 (918) 63 21 007</a></p>
+                    </div>
                 </div>
             </div>
+
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.5781569572514!2d41.37519644791012!3d44.830157929271685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f9cf56ee8c86c1%3A0xa525a357f432d94f!2z0J7QodCQ0JPQniDQkNCy0YLQvtGB0YLRgNCw0YXQvtCy0LDQvdC40LU!5e0!3m2!1sru!2sru!4v1549455194264"  width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
     </section>
@@ -287,11 +290,16 @@
                     this.articles = response.data
                     this.$store.state.newsData = response.data
                 })
-        }
+        },
+
     }
+
+
+
 </script>
 
 <style scoped>
+
     .news {
         display:inline-block;
         position:relative;
@@ -306,11 +314,11 @@
         /* Оформление текста */
         color:#FFF;
         font-family:Arial, Helvetica, sans-serif;
-        font-size:18px;
+        font-size:17px;
 
         /* Фон */
-        background-color:rgba(0,0,0,.4);
-        padding:10px 30px;
+        background-color:rgba(0,0,0,.3);
+        padding:5px 20px;
     }
     .phone-link {
         all: unset;
@@ -319,6 +327,21 @@
     .phone-link:hover {
         all: unset;
         color: #000000;
+    }
+    .cntr {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: max-content;
+    }
+    .news-main-img {
+        height: 260px;
+        width: 380px;
+        object-fit: cover
+    }
+    .button {
+        width: 190px;
+        text-align: center;
     }
     @media screen and (max-width:780px){
         .services-wrap {

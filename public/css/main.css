@@ -270,7 +270,7 @@ input.search-form:hover {
 .navbar {
     border-radius: 0;
     margin-bottom: 0;
-    background: #000000;
+    background: #030303;
     padding: 15px 0;
     padding-bottom: 0;
 }
@@ -295,7 +295,7 @@ input.search-form:hover {
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
-    background-color: #EC5538;
+    background-color: #cc0018;
     color: #fff;
 }
 
@@ -344,7 +344,7 @@ input.search-form:hover {
 .navbar-inverse .navbar-nav .dropdown-menu>li:hover>a,
 .navbar-inverse .navbar-nav .dropdown-menu>li:focus>a,
 .navbar-inverse .navbar-nav .dropdown-menu>li.active>a {
-    background-color: #EC5538;
+    background-color: #cc0018;
     color: #fff;
 }
 
@@ -502,8 +502,8 @@ input.search-form:hover {
 }
 
 #main-slider .carousel-indicators li.active {
-    background-color: #EC5538;
-    border: 1px solid #EC5538
+    background-color: #cc0018;
+    border: 1px solid #cc0018
 }
 
 #main-slider .active .animation.animated-item-1 {
@@ -1294,9 +1294,8 @@ a.accordion-toggle i {
 
 .footer {
     background: none repeat scroll 0 0 #2E2E2E;
-    border-top: 5px solid #EC5538;
+    border-top: 5px solid #4c4c4c;
     height: 84px;
-    margin-top: 110px;
 }
 
 .footer_left {
@@ -2354,4 +2353,24 @@ shortcodes page css
     .top-bar {
         display: none;
     }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.content {
+    flex: 1 0 auto;
+}
+.footer {
+    flex: 0 0 auto;
 }

@@ -1,0 +1,138 @@
+
+.sidebar{
+    width:80%;
+    border-left:1px solid #ccc;
+    padding:20px;
+}
+.sidebar .sidebar_kbm {
+    line-height: 1.2;
+    margin: 0 0 40px;
+    padding: 0 0 40px;
+}
+.sidebar .sidebar_kbm h3{
+    margin: 0px 0 20px !important;
+}
+.sidebar .sidebar_kbm img {
+    width: 100%;
+}
+.sidebar .sidebar_kbm .pay_application h3{
+    text-transform: uppercase;
+    color: #28ada3;
+    font-weight: 600;
+}
+.sidebar .sidebar_kbm .pay_application input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #888;
+}
+.sidebar .sidebar_kbm .pay_application p {
+    margin: 20px 0 30px;
+}
+.sidebar_kbm button,
+.sidebar .sidebar_kbm .pay_application input[type=submit]{
+    background: #28ada3;
+    border: none;
+    color: #fff !important;
+    font-size: 18px;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.sidebar_kbm button:hover,
+.sidebar .sidebar_kbm .pay_application input[type=submit]:hover{
+    background: #F0664A;
+}
+.sidebar .sidebar_kbm .pay_application input[type=submit]{
+    margin-top: 20px;
+}
+.sidebar_wrapper {
+    position: sticky;
+    top: 90px;
+    bottom: 0;
+}
+.sidebar_services {
+    margin: 0 0 50px;
+}
+.sidebar_services a {
+    display: flex;
+    align-items: center;
+    margin: 0 0 12px;
+    text-decoration: underline;
+}
+.sidebar_services a svg {
+    width: 17%;
+    height: 17%;
+    margin: 0 10px 0 0;
+}
+.sidebar_services a svg .st0{
+    fill: #28ada3;
+    transition: 0.3s;
+}
+.sidebar_services a:hover svg .st0{
+    fill: #F0664A;
+}
+.sidebar_kbm .sidebar_kbm_h {
+    display: flex;
+    align-items: center;
+}
+.sidebar_kbm .sidebar_kbm_h img{
+    width: 23%;
+    margin: 0 7% 0 0;
+}
+.sidebar_kbm .sidebar_kbm_h h3 {
+    margin: 0 !important;
+    color: #e84849;
+    text-transform: uppercase;
+}
+.sidebar_kbm .fade_toggle_info {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0 0;
+    opacity: 0;
+}
+.sidebar_kbm .fade_toggle_info > div {
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+
+    border-radius: 5px;
+    height: 90%;
+    max-height: 720px;
+    position: relative;
+}
+.sidebar_kbm .fade_toggle_info > div img {
+    height: 85%;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+.sidebar_kbm .fade_toggle_info > div .fade_toggle_info_info {
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: -15px;
+    top: -15px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1024px){
+    .sidebar{width:31%;}
+}
+@media screen and (max-width:990px){
+    .sidebar{display:none;}
+}

@@ -17,8 +17,9 @@
                     <div class="collapse navbar-collapse navbar-right">
                         <ul class="nav navbar-nav">
                             <li :class="{ 'active': $route.name === 'main' }"><router-link :to="{name: 'main'}">Главная</router-link></li>
-                            <li><a href="/#news">Новости Страхования</a></li>
-                            <li :class="{ 'active': $route.name === 'download' }"><router-link :to="{name: 'download'}">Отправить документы</router-link></li>
+                            <li :class="{ 'active': $route.name === 'news' }"><a href="/#news">Новости Страхования</a></li>
+                            <li :class="{ 'active': $route.name === 'download' }"><router-link :to="{name: 'download'}">Заказать страховку</router-link></li>
+                            <li :class="{ 'active': $route.name === 'calc-osago' }"><router-link :to="{name: 'calc-osago'}">Калькулятор ОСАГО</router-link></li>
                             <li><a href="/#contacts">Контакты</a></li>
                         </ul>
                     </div>
